@@ -1,0 +1,11 @@
+build/
+__pycache__/
+.env
+.env.*
+private/
+raw-screenshots/
+*credentials*.json
+*secrets*.json
+*.log
+.DS_Store
+~$*

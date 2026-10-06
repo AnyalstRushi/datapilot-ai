@@ -1,0 +1,9 @@
+Booking ID,Date,Booking Status,Booking Value,Vehicle Type
+DEMO-001,2026-10-01,Success,120,Mini
+DEMO-002,2026-10-01,Canceled by Driver,0,Sedan
+DEMO-003,2026-10-02,Success,200,Sedan
+DEMO-004,2026-10-02,Driver Not Found,0,Mini
+DEMO-005,2026-10-03,Success,150,Mini
+DEMO-006,2026-10-03,Canceled by Customer,0,SUV
+DEMO-007,2026-10-04,Success,330,SUV
+DEMO-008,2026-10-04,Success,200,Sedan

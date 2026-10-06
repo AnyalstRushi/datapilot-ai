@@ -1,0 +1,74 @@
+[
+  {
+    "title": "DataPilot AI",
+    "tag": "Conversational spreadsheet analysis and Gmail automation",
+    "body": "Evidence-backed n8n prototype.\nOwner: AnyalstRushi.\nOriginal workflow export pending.",
+    "notes": "Introduce it as a prototype, not a company deployment."
+  },
+  {
+    "title": "The user problem",
+    "tag": "Product brief",
+    "body": "Spreadsheet questions and report communication create manual handoffs.\nChat can coordinate retrieval and communication.\nTime savings and ROI remain unmeasured.",
+    "notes": "Explain the intended value without fabricated impact metrics."
+  },
+  {
+    "title": "Observed architecture",
+    "tag": "System design",
+    "body": "Chat Trigger -> AI Agent.\nAnthropic model and Simple Memory support the agent.\nGoogle Sheets and Gmail are connected tools.\nTool invocation is not guaranteed on every request.",
+    "notes": "Describe the main connection separately from supporting sub-nodes."
+  },
+  {
+    "title": "What is demonstrated",
+    "tag": "Evidence boundaries",
+    "body": "Spreadsheet retrieval is visible.\nOne response displays 43 data rows plus a header.\nA static-body email is received.\nA generated analytics email is not yet verified.",
+    "notes": "The 43-row response and larger booking source are different observations."
+  },
+  {
+    "title": "The large-data failure",
+    "tag": "Engineering finding",
+    "body": "Sheets returned 20,407 items.\nThe next model request failed: request entity too large.\nExact provider limits were not established.\nSuccessful retrieval does not imply safe LLM processing.",
+    "notes": "Do not invent a byte limit, context capacity, or service error code."
+  },
+  {
+    "title": "Input and memory context",
+    "tag": "Troubleshooting",
+    "body": "One manual agent screen shows undefined chatInput.\nSimple Memory also reports an error.\nTest through workflow chat and inspect the detailed node error.",
+    "notes": "The exact memory cause is unconfirmed."
+  },
+  {
+    "title": "Email delivery vs report correctness",
+    "tag": "Action validation",
+    "body": "Gmail success and actual receipt are separate checks.\nThe delivered body is a static greeting.\nNext test: receive the exact approved data-derived report.",
+    "notes": "Do not call the static greeting an analytics report."
+  },
+  {
+    "title": "Calculate first, explain second",
+    "tag": "Proposed redesign",
+    "body": "Read bounded data and validate coverage.\nCompute counts, sums, and categories outside the LLM.\nGive the model one compact summary.\nPreview, approve, send once, and record the outcome.",
+    "notes": "This architecture is proposed, not yet implemented."
+  },
+  {
+    "title": "A measurable synthetic fixture",
+    "tag": "Testing",
+    "body": "8 fictional data rows; 5 successful bookings.\nBooking-value sum: 1,000; all-row mean: 125.\nSuccessful-booking mean: 200.\nCurrency unspecified; original workflow test pending.",
+    "notes": "Local fixture tests are not integration tests."
+  },
+  {
+    "title": "Privacy and action safety",
+    "tag": "Security",
+    "body": "No raw screenshots, source records, or personal contacts published.\nInspect workflow exports before sharing.\nApproval, duplicate protection, and memory isolation are proposed.\nNo audit or certification is claimed.",
+    "notes": "Original dataset rights and credential scopes are not established."
+  },
+  {
+    "title": "Delivery gates",
+    "tag": "Roadmap",
+    "body": "Reproduce: original export and fresh import.\nReport: exact metrics and dynamic email receipt.\nProtect: approval and duplicate prevention.\nScale: compact model input and large-source retest.",
+    "notes": "No deadlines or production SLAs are committed."
+  },
+  {
+    "title": "Engineering over hype",
+    "tag": "Portfolio takeaway",
+    "body": "A useful agent needs bounded data, validated results, and controlled actions.\nLead with actual evidence and honest limitations.\nNext milestone: verified spreadsheet-derived email report.",
+    "notes": "Use the project report for interview notes and technical sources."
+  }
+]

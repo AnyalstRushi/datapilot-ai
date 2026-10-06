@@ -1,0 +1,13 @@
+{
+  "total_data_rows": 8,
+  "booking_status_counts": {
+    "Success": 5,
+    "Canceled by Driver": 1,
+    "Driver Not Found": 1,
+    "Canceled by Customer": 1
+  },
+  "booking_value_sum": 1000,
+  "booking_value_mean_all_rows": 125,
+  "successful_booking_count": 5,
+  "successful_booking_value_mean": 200
+}
