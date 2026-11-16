@@ -22,20 +22,28 @@ An evidence-backed **n8n prototype** connecting conversational chat, an Anthropi
 > [!IMPORTANT]  
 > **Status: prototype.** Small-sheet interaction and delivery of a static email are demonstrated in supplied screenshots. Large raw-row model input failed. An end-to-end data-derived report and the original sanitized workflow export are still pending.
 
-## What DataPilot AI does
+## Live architecture
+
+<img src="assets/datapilot-architecture.svg" alt="DataPilot AI animated architecture" width="100%">
 
 ```text
 Ask → Retrieve spreadsheet context → Reason with AI → Deliver by email
 ```
 
-| Capability | What it means |
-|---|---|
-| 💬 **Ask** | A Chat Trigger sends a natural-language request to the AI Agent. |
-| 🧠 **Analyze** | Anthropic provides model reasoning, while Simple Memory preserves conversational context. |
-| 📊 **Retrieve** | Google Sheets supplies spreadsheet context for the workflow. |
-| 📧 **Deliver** | Gmail is the delivery channel for the workflow output. |
-
 Connected tools do not necessarily execute on every request.
+
+## Live demo
+
+<img src="assets/datapilot-demo.svg" alt="DataPilot AI live demo terminal" width="100%">
+
+```bash
+python -m pip install -r requirements.txt
+python scripts/validate_fixture.py
+python -m unittest discover -s tests -v
+python scripts/build_deliverables.py
+```
+
+The included eight-row fixture is fictional. Fixture tests validate calculations and invalid inputs only; they do not run n8n, Anthropic, Google Sheets, or Gmail.
 
 ## Evidence board
 
@@ -48,18 +56,7 @@ Connected tools do not necessarily execute on every request.
 | Dynamic analytics email | ⏳ Not yet verified |
 | Reproducible workflow import | ⏳ Blocked until the original workflow JSON is provided |
 
-## Architecture
-
-```mermaid
-flowchart LR
- C[Chat Trigger] --> A[AI Agent]
- M[Anthropic Chat Model] -. model .-> A
- H[Simple Memory] -. memory .-> A
- S[Google Sheets] -. tool .-> A
- G[Gmail] -. tool .-> A
-```
-
-### Target redesign
+## Target redesign
 
 ```text
 Google Sheets → External aggregation → Compact validated summary
@@ -70,31 +67,16 @@ The target redesign calculates counts and aggregates outside the model, sends a 
 
 ## Interactive presentation
 
-Explore the project through a self-contained, animated presentation:
-
 [![Open presentation](https://img.shields.io/badge/🎬-Launch%20presentation-38bdf8)](presentation/datapilot-ai-presentation.html)
-
-The presentation covers the workflow architecture, demonstrated evidence, scaling boundary, target redesign, deliverables pipeline, privacy approach, and roadmap.
 
 ## Start here
 
-- [Project report](docs/PROJECT_REPORT.md): architecture, evidence, setup, tests, privacy, limitations, roadmap, and interview notes.
-- [Workflow export requirements](workflows/README.md): original JSON still pending; no fabricated workflow included.
-- [Presentation content](presentation/slides.json): twelve-slide narrative with speaker notes.
-- [Interactive presentation](presentation/datapilot-ai-presentation.html): animated HTML experience.
-
-## Build locally
-
-```bash
-python -m pip install -r requirements.txt
-python scripts/validate_fixture.py
-python -m unittest discover -s tests -v
-python scripts/build_deliverables.py
-```
+- [Project report](docs/PROJECT_REPORT.md)
+- [Workflow export requirements](workflows/README.md)
+- [Presentation content](presentation/slides.json)
+- [Interactive presentation](presentation/datapilot-ai-presentation.html)
 
 ## Tests and maturity
-
-The included eight-row fixture is fictional. Fixture tests check calculations and invalid inputs only; they do not run n8n, the model, Google Sheets, or Gmail. Currency is unspecified.
 
 No customer adoption, ROI, accuracy percentage, SLA, deployment claim, or security certification is made.
 
