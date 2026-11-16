@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="DataPilot AI" width="100%">
+<img src="assets/datapilot-hero.svg" alt="DataPilot AI — Ask. Analyze. Deliver." width="100%">
 
 # DataPilot AI
 
@@ -13,20 +13,16 @@ An evidence-backed **n8n prototype** connecting conversational chat, an Anthropi
 [![Model](https://img.shields.io/badge/model-Anthropic-191919?logo=anthropic&logoColor=white)](https://www.anthropic.com/)
 [![Data](https://img.shields.io/badge/data-Google%20Sheets-34A853?logo=googlesheets&logoColor=white)](https://sheets.google.com/)
 [![Delivery](https://img.shields.io/badge/delivery-Gmail-EA4335?logo=gmail&logoColor=white)](https://mail.google.com/)
-[![Tests](https://img.shields.io/badge/tests-fixture%20validated-34d399)]()
 
-**[🎬 Launch interactive presentation](presentation/datapilot-ai-presentation.html)** · **[📄 Project report](docs/PROJECT_REPORT.md)** · **[🧩 Workflow requirements](workflows/README.md)** · **[🧭 Presentation content](presentation/slides.json)**
+[![🎬 Launch interactive presentation](https://img.shields.io/badge/🎬-Launch%20interactive%20presentation-38bdf8)](presentation/datapilot-ai-presentation.html)
+[![📄 Project report](https://img.shields.io/badge/📄-Project%20report-a78bfa)](docs/PROJECT_REPORT.md)
 
 </div>
-
-<br>
 
 > [!IMPORTANT]  
 > **Status: prototype.** Small-sheet interaction and delivery of a static email are demonstrated in supplied screenshots. Large raw-row model input failed. An end-to-end data-derived report and the original sanitized workflow export are still pending.
 
 ## What DataPilot AI does
-
-DataPilot AI explores a practical automation path:
 
 ```text
 Ask → Retrieve spreadsheet context → Reason with AI → Deliver by email
@@ -65,14 +61,12 @@ flowchart LR
 
 ### Target redesign
 
-The next architecture reduces raw-row model input:
-
 ```text
 Google Sheets → External aggregation → Compact validated summary
               → Anthropic explanation → Approval → Gmail delivery
 ```
 
-This approach calculates counts and aggregates outside the model, sends a compact validated summary for explanation, and adds an approval step before the email action.
+The target redesign calculates counts and aggregates outside the model, sends a compact validated summary for explanation, and adds an approval step before the email action.
 
 ## Interactive presentation
 
@@ -89,13 +83,7 @@ The presentation covers the workflow architecture, demonstrated evidence, scalin
 - [Presentation content](presentation/slides.json): twelve-slide narrative with speaker notes.
 - [Interactive presentation](presentation/datapilot-ai-presentation.html): animated HTML experience.
 
-## PPT, PDF, and Word report
-
-The repository includes the source and build script for editable PPTX, PDF, and DOCX deliverables. The **Build project package** GitHub Actions workflow generates them and uploads a `datapilot-project-package` artifact. Its successful execution must be checked; no hosted build is claimed before it runs.
-
-Open **Actions → Build project package → successful run → Artifacts** to access the generated bundle. Binary files are generated as artifacts, not committed directly to the repository.
-
-### Build locally
+## Build locally
 
 ```bash
 python -m pip install -r requirements.txt
